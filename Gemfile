@@ -4,3 +4,4 @@ gemspec
 gem 'rspec'
 gem 'activerecord'
 gem 'sqlite3'
+gem 'shoulda'

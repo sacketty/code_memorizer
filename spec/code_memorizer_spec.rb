@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'shoulda'
 describe Category do
   subject { Category.doc}
   its(:code) { should == "DOC"}
@@ -16,5 +17,9 @@ describe Product do
   it "should give correct category" do
     pr = Product.new(category_ref: "ABC")
     pr.category.should == Category.abc
+  end
+  describe "validation" do
+    subject {Product.new}
+    it {should validate_presence_of(:category)}
   end
 end

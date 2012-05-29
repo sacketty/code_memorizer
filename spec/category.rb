@@ -1,5 +1,6 @@
 class Product< ActiveRecord::Base
-  has_config :category  
+  has_config :category
+  validates_presence_of :category
 end
 
 class Category

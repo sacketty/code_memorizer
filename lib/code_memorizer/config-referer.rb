@@ -25,7 +25,8 @@ class ActiveRecord::Base
     end
     
     define_method association_equal do |meth, *args, &blk|
-      send(association_ref_id_equal, meth.send(:code))
+      val = meth ? meth.send(:code) : nil
+      send(association_ref_id_equal, val)
       @association = meth
     end
   end
