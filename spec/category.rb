@@ -3,6 +3,11 @@ class Product< ActiveRecord::Base
   validates_presence_of :category
 end
 
+class Movie< ActiveRecord::Base
+  has_config :genre, :class_name=>"Category"
+  validates_presence_of :genre
+end
+
 class Category
   attr_accessor :code, :description
   @@codes = {}
