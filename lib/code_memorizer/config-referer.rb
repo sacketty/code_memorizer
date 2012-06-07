@@ -5,7 +5,6 @@ class ActiveRecord::Base
 
 #  def self.has_config(association_ref)
   def self.has_config(*args)
-    puts "args = #{args.inspect}"
     association_ref = args[0]
     # Subst the module simbol to dash and if this is string
     if association_ref.kind_of?(String)
