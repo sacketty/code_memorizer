@@ -12,7 +12,10 @@ class ActiveRecord::Base
       class_name = association_ref
       association_ref = association_ref.to_s.gsub(/::/, '_').downcase.to_sym
     else
-      class_name = association_ref.to_s.classify
+      if(!args[1].nil?)
+        class_name = args[1][:class_name]
+      end
+      class_name ||= association_ref.to_s.classify
     end
     association_equal = (association_ref.to_s+"=").to_sym
     association_ref_id = (association_ref.to_s+"_ref").to_sym

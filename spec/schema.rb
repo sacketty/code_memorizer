@@ -3,6 +3,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string :name
     t.string :category_ref
   end
+  
   create_table :movies, :force => true do |t|
     t.string :title
     t.string :genre_ref

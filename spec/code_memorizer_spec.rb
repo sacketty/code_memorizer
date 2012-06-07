@@ -28,6 +28,7 @@ describe Movie do
   it {should respond_to(:genre)}
   it {should respond_to(:genre_ref)}
   its(:genre_ref) {should == "DOC"}
+  its(:genre) {should be_an_instance_of(Category) }
   it "genre_ref should be set" do
     pr = Movie.new
     pr.genre=Category.doc
